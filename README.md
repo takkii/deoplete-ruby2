@@ -3,7 +3,7 @@ License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](
 LICENSE) [![GitHub release](https://img.shields.io/github/release/takkii/kindness.svg?style=flat)](GitHub) [![GitHub Status](https://img.shields.io/github/last-commit/takkii/kindness.svg?style=flat)](GitHub) [![Python package](https://github.com/takkii/kindness/actions/workflows/python.yml/badge.svg)](https://github.com/takkii/kindness/actions/workflows/python.yml)
 <br />
 <div align="center">
-    <p> kindness use <a href="https://github.com/Shougo/deoplete.nvim">deoplete.nvim</a></p>
+    kindness use <a href="https://github.com/Shougo/deoplete.nvim">deoplete.nvim</a>
 </div>
 <br />
 <div align="center">
