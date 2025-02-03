@@ -22,12 +22,12 @@ class Source(Base):
     def __init__(self, vim):
         super().__init__(vim)
         self.name: Optional[str] = 'kindness'
-        self.filetypes: Optional[list] = ['ruby']
+        self.filetypes: Optional[list] = ['ruby', 'html']
         mark_synbol: Optional[str] = '[pandas: ' + str(pd.__version__) + ']'
         self.mark: Optional[str]  = str(mark_synbol)
         ruby_match: Optional[list] = [r'\.[a-zA-Z0-9_?!]*|[a-zA-Z]\w*::\w*']
-        slash_none: Optional[list] = [r'[;/[^¥/]\*/]']
-        self.input_pattern: Optional[str] = '|'.join(ruby_match + slash_none)
+        html_match: Optional[list] = [r'[<a-zA-Z(?: .+?)?>.*?<\/a-zA-Z>]']
+        self.input_pattern: Optional[str] = '|'.join(ruby_match + html_match)
         self.rank: Optional[int] = 500
 
     def get_complete_position(self, context):
@@ -61,9 +61,9 @@ class Source(Base):
                     # Get Receiver/kindness behavior.
                     with open(os.path.expanduser(loc_t)) as r_meth:
                         # pandas and dask
-                        index_php: Optional[list] = list(r_meth.readlines())
-                        pd_php = pd.Series(index_php)
-                        st_r = pd_php.sort_index()
+                        index_ruby: Optional[list] = list(r_meth.readlines())
+                        pd_ruby = pd.Series(index_ruby)
+                        st_r = pd_ruby.sort_index()
                         ddf = from_pandas(
                             data=st_r, npartitions=multiprocessing.cpu_count())
                         data_array = ddf.to_dask_array(lengths=True)
@@ -80,9 +80,9 @@ class Source(Base):
                     # Get Receiver/kindness behavior.
                     with open(os.path.expanduser(neo_t)) as r_meth:
                         # pandas and dask
-                        neo_php: Optional[list] = list(r_meth.readlines())
-                        pd_php = pd.Series(neo_php)
-                        st_r = pd_php.sort_index()
+                        neo_ruby: Optional[list] = list(r_meth.readlines())
+                        pd_ruby = pd.Series(neo_ruby)
+                        st_r = pd_ruby.sort_index()
                         ddf = from_pandas(
                             data=st_r, npartitions=multiprocessing.cpu_count())
                         data_array = ddf.to_dask_array(lengths=True)
@@ -99,9 +99,9 @@ class Source(Base):
                     # Get Receiver/kindness behavior.
                     with open(os.path.expanduser(vim_t)) as r_meth:
                         # pandas and dask
-                        vim_php: Optional[list] = list(r_meth.readlines())
-                        pd_php = pd.Series(vim_php)
-                        st_r = pd_php.sort_index()
+                        vim_ruby: Optional[list] = list(r_meth.readlines())
+                        pd_ruby = pd.Series(vim_ruby)
+                        st_r = pd_ruby.sort_index()
                         ddf = from_pandas(
                             data=st_r, npartitions=multiprocessing.cpu_count())
                         data_array = ddf.to_dask_array(lengths=True)
