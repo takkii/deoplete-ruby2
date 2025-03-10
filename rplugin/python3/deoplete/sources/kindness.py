@@ -44,12 +44,12 @@ class Source(Base):
             if (py_mj == 3 and py_mi > 4) or (py_mj < 4):
 
                 # Settings, vim-plug | neovim path is true/false folder search.
-                neo_f: Optional[str] = '~/.neovim/plugged/kindness/dict/'
-                neo_t = '~/.neovim/plugged/kindness/dict/ruby_method.txt'
+                neo_f: Optional[str] = '~/.neovim/plugged/ruby-dict/autoload/source/'
+                neo_t = '~/.neovim/plugged/ruby-dict/autoload/source/ruby_method.txt'
 
                 # Settings, vim-plug | vim path is true/false folder search.
-                vim_f: Optional[str] = '~/.vim/plugged/kindness/dict/'
-                vim_t = '~/.vim/plugged/kindness/dict/ruby_method.txt'
+                vim_f: Optional[str] = '~/.vim/plugged/ruby-dict/autoload/source/'
+                vim_t = '~/.vim/plugged/ruby-dict/autoload/source/ruby_method.txt'
 
                 # Settings, $HOME/dict path is true/false folder search.
                 loc_f: Optional[str] = '~/dict/'
