@@ -45,7 +45,7 @@ class Source(Base):
 
                 # Settings, vim-plug | vim path is true/false folder search.
                 vim_f: Optional[str] = '~/.vim/plugged/ruby-dict/autoload/source/'
-                vim_t = '~/~/.vim/plugged/ruby-dict/autoload/source/ruby_method_kindness.txt'
+                vim_t = '~/.vim/plugged/ruby-dict/autoload/source/ruby_method_kindness.txt'
 
                 # Settings, $HOME/dict path is true/false folder search.
                 loc_f: Optional[str] = '~/dict/'
