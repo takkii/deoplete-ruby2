@@ -44,8 +44,8 @@ class Source(Base):
             if (py_mj == 3 and py_mi > 4) or (py_mj < 4):
 
                 # Settings, vim-plug | vim path is true/false folder search.
-                vim_f: Optional[str] = '~/.vim/plugged/ruby-dict/autoload/source/vim/'
-                vim_t = '~/.vim/plugged/ruby-dict/autoload/source/vim/ruby_method_kindness.txt'
+                vim_f: Optional[str] = '~/.vim/plugged/dict/load/ruby/vim/'
+                vim_t = '~/.vim/plugged/dict/load/ruby/vim/ruby_method_kindness.txt'
 
                 # Settings, $HOME/dict path is true/false folder search.
                 loc_f: Optional[str] = '~/dict/'
