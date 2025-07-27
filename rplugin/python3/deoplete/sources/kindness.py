@@ -43,7 +43,7 @@ class Source(Base):
             if (py_mj == 3 and py_mi > 4) or (py_mj < 4):
 
                 # Settings, $HOME/dict path is true/false folder search.
-                loc_t: Optional[str] = 'load/ruby/vim'
+                loc_t: Optional[str] = 'load/ruby/vim/'
 
                 paths = [
                     os.path.expanduser(os.path.join(p, loc_t)) for p in [
@@ -87,32 +87,6 @@ class Source(Base):
             # Load/Create LogFile.
             except_folder: Optional[str] = '~/' + git_k
             except_file: Optional[str] = '~/' + git_k + '/error.log'
-
-            # Load the dictionary.
-            if os.path.isdir(os.path.expanduser(except_folder)):
-                with open(os.path.expanduser(except_file), 'a') as log_py:
-                    traceback.print_exc(file=log_py)
-
-                    # throw except.
-                    raise RuntimeError from None
-
-            # skl_str Folder not found.
-            else:
-                raise ValueError("None, Please Check the kindness Folder.")
-
-        # Once Exec.
-        finally:
-            # GC collection.
-            gc.collect()
-.5 or higher and 4.x or less.
-            else:
-                raise ValueError("VERSION: 3.5 and higher, 4.x or less")
-
-        # TraceBack.
-        except Exception:
-            # Load/Create LogFile.
-            except_folder: Optional[str] = '~/kindness_log/'
-            except_file: Optional[str] = '~/kindness_log/kindness_error.log'
 
             # Load the dictionary.
             if os.path.isdir(os.path.expanduser(except_folder)):
