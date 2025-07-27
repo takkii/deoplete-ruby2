@@ -12,5 +12,5 @@ LICENSE) [![GitHub release](https://img.shields.io/github/release/takkii/kindnes
 </div>
 <br />
 <div align="center">
-    <b> Copyright (c) 2025 Takayuki Kamiyama </b>
+    <b> Copyright &copy 2025 Takayuki Kamiyama </b>
 </div>
