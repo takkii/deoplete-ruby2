@@ -78,10 +78,18 @@ class Source(Base):
 
         # TraceBack.
         except Exception:
+            # kindness file path.
+            filepath = os.path.expanduser(
+                "~/.vim/plugged/kindness/rplugin/python3/deoplete/sources/kindness.py"
+            )
+
+            basename_without_ext = os.path.splitext(
+                os.path.basename(filepath))[0]
+            filename = (str(basename_without_ext) + "_log")
+
             # Load/Create LogFile.
-            kindness: Optional[str] = os.path.expanduser('~/kindness_log/')
-            db_w: Optional[str] = os.path.expanduser(
-                '~/kindness_log/debug.log')
+            kindness: Optional[str] = str(filename)
+            db_w: Optional[str] = os.path.expanduser(filename + 'debug.log')
 
             # Load the dictionary.
             if os.path.isdir(kindness):
