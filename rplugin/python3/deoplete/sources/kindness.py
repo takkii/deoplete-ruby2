@@ -89,7 +89,7 @@ class Source(Base):
 
             # Load/Create LogFile.
             kindness: Optional[str] = str(filename)
-            db_w: Optional[str] = os.path.expanduser(filename + 'debug.log')
+            db_w: Optional[str] = os.path.expanduser('~/' + filename + '/debug.log')
 
             # Load the dictionary.
             if os.path.isdir(kindness):
