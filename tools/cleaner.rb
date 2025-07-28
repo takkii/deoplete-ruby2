@@ -24,13 +24,16 @@ class CleanRunner
     }
 
     # Check, kindness.py path
-    git_k = File.basename(File.expand_path("~/.vim/plugged/kindness/rplugin/python3/deoplete/sources/kindness.py"), ".py") + "_log"
+    filepath = '~/.vim/plugged/kindness/rplugin/python3/deoplete/sources/kindness.py'.to_s
+    git_k = File.basename(File.expand_path(filepath), '.py')
+    kind_exist = "#{git_k}_log"
+    encoding_style
 
     while (line = Readline.readline(""))
       line.chomp!
 
       if line.match?(sel[0])
-        FileUtils.rm_rf(File.expand_path('~/' + git_k))
+        FileUtils.rm_rf(File.expand_path("~/#{kind_exist}"))
         puts ''
         puts 'Deleted, the existing kindness_log folder.'
         puts ''
@@ -51,10 +54,12 @@ class CleanRunner
 
   def self.run
     # Check, kindness.py path
-    git_k = File.basename(File.expand_path("~/.vim/plugged/kindness/rplugin/python3/deoplete/sources/kindness.py"), ".py") + "_log"
+    filepath = '~/.vim/plugged/kindness/rplugin/python3/deoplete/sources/kindness.py'.to_s
+    git_k = File.basename(File.expand_path(filepath), '.py')
+    kind_exist = "#{git_k}_log"
     encoding_style
 
-    if Dir.exist?(File.expand_path('~/' + git_k))
+    if Dir.exist?(File.expand_path("~/#{kind_exist}"))
       puts ''
       puts 'Already have a kindness_log folder.'
       delete
@@ -63,7 +68,7 @@ class CleanRunner
       FileUtils.mv("#{File.dirname(__FILE__)}/kindness_log", File.expand_path('~/'))
       puts ''
       puts 'Created, kindness_log folder.'
-      puts ''  
+      puts ''
     end
   end
 end
