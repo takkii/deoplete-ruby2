@@ -8,6 +8,10 @@ LICENSE) [![GitHub release](https://img.shields.io/github/release/takkii/kindnes
 </div>
 <br />
 <div align="center">
+    <img src="https://github.com/takkii/kindness/blob/main/images/ruby.gif" alt="diamond">
+</div>
+<br />
+<div align="center">
     <b> kindness is  overlap clone, origin go_straight / totolot.</b>
 </div>
 <br />
