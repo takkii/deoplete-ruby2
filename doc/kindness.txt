@@ -1,6 +1,6 @@
 *kindness*
 
-version: 2025/07/27
+version: 2025/09/07
 Author: takkii <karuma.reason@gmail.com>
 License: MIT
 
@@ -14,11 +14,10 @@ Python3.5 ≦  x ＜ Python4.0             Python3.5 or higher
 x = kindness                            but less than 4.0 is recommended
 
 ==============================================================================
-*./kindness*
+*./kindness/tools*
 
+Change, dependent library               pandas and dask → polars
 Load dictionary                         $HOME or vim-plug: Vim
-Log folder operations (create/delete)   ruby ./tools/cleaner.rb
-Python version check (Windows)          python pake.py
-Python version check (UNIX)             ./pake
+Log folder operations (create/delete)   ruby cleaner.rb
 
 ==============================================================================

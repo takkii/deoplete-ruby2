@@ -1,6 +1,6 @@
 *kindness*
 
-version: 2025/07/27
+version: 2025/09/07
 Author: takkii <karuma.reason@gmail.com>
 License: MIT
 
@@ -14,11 +14,10 @@ Python3.5 ≦  x ＜ Python4.0           Python3.5以上4.0未満を推奨しま
 x = kindness
 
 ==============================================================================
-*./kindness*
+*./kindness/tools*
 
+依存ライブラリ変更                    pandas and dask → polars
 辞書読み込み                          $HOME or vim-plug: Vim
-ログフォルダ操作(作成/削除)           ruby ./tools/cleaner.rb
-バージョンチェック(Windows)           python pake.py
-バージョンチェック(UNIX)              ./pake
+ログフォルダ操作(作成/削除)           ruby cleaner.rb
 
 ==============================================================================
