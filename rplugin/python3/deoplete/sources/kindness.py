@@ -1,13 +1,12 @@
 import gc
 import multiprocessing
 import os
-import pandas as pd
+import polars as pl
 import re
 import sys
 import traceback
 import warnings
 
-from dask.dataframe import from_pandas
 from deoplete.source.base import Base
 from operator import itemgetter
 from typing import Optional
@@ -22,7 +21,7 @@ class Source(Base):
         super().__init__(vim)
         self.name: Optional[str] = 'kindness'
         self.filetypes: Optional[list] = ['ruby']
-        mark_synbol: Optional[str] = '[pandas: ' + str(pd.__version__) + ']'
+        mark_synbol: Optional[str] = '[polars: ' + str(pl.__version__) + ']'
         self.mark: Optional[str] = str(mark_synbol)
         ruby_match: Optional[list] = [r'\.[a-zA-Z0-9_?!]*|[a-zA-Z]\w*::\w*']
         html_match: Optional[list] = [r'[<a-zA-Z(?: .+?)?>.*?<\/a-zA-Z>]']
@@ -58,14 +57,10 @@ class Source(Base):
 
                 # Get Receiver/kindness behavior.
                 with open(rb_mod_fn) as r_meth:
-                    # pandas and dask
+                    # polars
                     index_ruby: Optional[list] = list(r_meth.readlines())
-                    pd_ruby = pd.Series(index_ruby)
-                    st_r = pd_ruby.sort_index()
-                    ddf = from_pandas(data=st_r,
-                                      npartitions=multiprocessing.cpu_count())
-                    data_array = ddf.to_dask_array(lengths=True)
-                    data = data_array.compute()
+                    pl_ruby = pl.Series(index_ruby)
+                    data = pl_ruby.sort()
                     data_py: Optional[list] = [s.rstrip() for s in data]
 
                     # sorted and itemgetter
