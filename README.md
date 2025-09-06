@@ -11,7 +11,7 @@ LICENSE) [![GitHub release](https://img.shields.io/github/release/takkii/kindnes
 </div>
 <br />
 <div align="center">
-    <b> kindness is  overlap clone, origin go_straight / totolot.</b>
+    <b> kindness is overlap clone, origin / totolot.</b>
 </div>
 <br />
 <div align="center">
