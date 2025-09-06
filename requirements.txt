@@ -3,7 +3,4 @@ msgpack
 numpy
 pynvim
 types-PyYAML
-pandas
-dask[complete]
-scikit-learn
-joblib
+polars
