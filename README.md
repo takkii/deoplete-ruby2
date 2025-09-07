@@ -11,7 +11,7 @@ LICENSE) [![GitHub release](https://img.shields.io/github/release/takkii/kindnes
 </div>
 <br />
 <div align="center">
-    <b> kindness is overlap clone, origin / totolot.</b>
+    <b> Rename deoplete-ruby2, old name kindness. </b>
 </div>
 <br />
 <div align="center">
