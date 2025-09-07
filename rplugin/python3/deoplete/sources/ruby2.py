@@ -19,7 +19,7 @@ class Source(Base):
 
     def __init__(self, vim):
         super().__init__(vim)
-        self.name: Optional[str] = 'kindness'
+        self.name: Optional[str] = 'deoplete-ruby2'
         self.filetypes: Optional[list] = ['ruby']
         mark_synbol: Optional[str] = '[polars: ' + str(pl.__version__) + ']'
         self.mark: Optional[str] = str(mark_synbol)
@@ -55,7 +55,7 @@ class Source(Base):
                 rb_dict: Optional[str] = 'ruby_method_kindness.txt'
                 rb_mod_fn = os.path.join(path, rb_dict)
 
-                # Get Receiver/kindness behavior.
+                # Get Receiver/deoplete-ruby2 behavior.
                 with open(rb_mod_fn) as r_meth:
                     # polars
                     index_ruby: Optional[list] = list(r_meth.readlines())
@@ -73,9 +73,9 @@ class Source(Base):
 
         # TraceBack.
         except Exception:
-            # kindness file path.
+            # deoplete-ruby2 file path.
             filepath = os.path.expanduser(
-                "~/.vim/plugged/kindness/rplugin/python3/deoplete/sources/kindness.py"
+                "~/.vim/plugged/deoplete-ruby2/rplugin/python3/deoplete/sources/ruby2.py"
             )
 
             basename_without_ext = os.path.splitext(
@@ -83,21 +83,21 @@ class Source(Base):
             filename = (str(basename_without_ext) + "_log")
 
             # Load/Create LogFile.
-            kindness: Optional[str] = str(filename)
+            deoplete-ruby2: Optional[str] = str(filename)
             db_w: Optional[str] = os.path.expanduser('~/' + filename +
                                                      '/debug.log')
 
             # Load the dictionary.
-            if os.path.isdir(kindness):
+            if os.path.isdir(deoplete-ruby2):
                 with open(db_w, 'a') as log_py:
                     traceback.print_exc(file=log_py)
 
                     # throw except.
                     raise RuntimeError from None
 
-            # kindness_log Foler not found.
+            # deoplete-ruby2_log Foler not found.
             else:
-                raise ValueError("None, Please Check the kindness_log Folder.")
+                raise ValueError("None, Please Check the deoplete-ruby2_log Folder.")
 
         # Custom Exception.
         except ValueError as ext:
