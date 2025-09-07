@@ -77,12 +77,12 @@ class Source(Base):
             filename = ("deoplete-ruby2_log")
 
             # Load/Create LogFile.
-            deoplete-ruby2: Optional[str] = str(filename)
+            ruby2: Optional[str] = str(filename)
             db_w: Optional[str] = os.path.expanduser('~/' + filename +
                                                      '/debug.log')
 
             # Load the dictionary.
-            if os.path.isdir(deoplete-ruby2):
+            if os.path.isdir(ruby2):
                 with open(db_w, 'a') as log_py:
                     traceback.print_exc(file=log_py)
 
