@@ -72,8 +72,14 @@ class Source(Base):
 
         # TraceBack.
         except Exception:
-            # Filename changed.
-            filename = ("deoplete-ruby2_log")
+            # deoplete-ruby2 file path.
+            filepath = os.path.expanduser(
+                "~/.vim/plugged/deoplete-ruby2/rplugin/python3/deoplete/sources/ruby2.py"
+            )
+
+            basename_without_ext = os.path.splitext(
+                os.path.basename(filepath))[0]
+            filename = ("deoplete-" + str(basename_without_ext) + "_log")
 
             # Load/Create LogFile.
             ruby2: Optional[str] = str(filename)
@@ -90,8 +96,7 @@ class Source(Base):
 
             # deoplete-ruby2_log Foler not found.
             else:
-                raise ValueError(
-                    "None, Please Check the deoplete-ruby2_log Folder.")
+                raise ValueError("None, Please Check the deoplete-ruby2_log Folder.")
 
         # Custom Exception.
         except ValueError as ext:
