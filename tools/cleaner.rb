@@ -19,7 +19,10 @@ class CleanRunner
       sel.grep(/\A#{Regexp.quote word}/)
     }
 
-    ruby2_exist = "deoplete-ruby2_log"
+    filepath = '~/.vim/plugged/deoplete-ruby2/rplugin/python3/deoplete/sources/ruby2.py'.to_s
+    git_k = File.basename(File.expand_path(filepath), '.py')
+    ruby2_exist = "deoplete-#{git_k}_log"
+
     encoding_style
 
     while (line = Readline.readline(""))
@@ -46,7 +49,10 @@ class CleanRunner
   end
 
   def self.run
-    ruby2_exist = "deoplete-ruby2_log"
+    filepath = '~/.vim/plugged/deoplete-ruby2/rplugin/python3/deoplete/sources/ruby2.py'.to_s
+    git_k = File.basename(File.expand_path(filepath), '.py')
+    ruby2_exist = "deoplete-#{git_k}_log"
+
     encoding_style
 
     if Dir.exist?(File.expand_path("~/#{ruby2_exist}"))
